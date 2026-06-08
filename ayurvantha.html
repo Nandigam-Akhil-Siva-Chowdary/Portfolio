@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Ayurvantha integrated healthcare application ecosystem by Akhil Siva Chowdary.">
+    <title>Ayurvantha | Healthcare Application Ecosystem</title>
+
+    <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: #f7fbf8;
+        }
+
+        .secret-page {
+            padding-top: calc(var(--header-height) + 1.5rem);
+        }
+
+        .ayur-hero {
+            min-height: calc(100vh - var(--header-height));
+            display: grid;
+            align-content: center;
+            padding-bottom: 3rem;
+        }
+
+        .ayur-hero__panel {
+            display: grid;
+            gap: 2rem;
+            align-items: center;
+            background: #ffffff;
+            border-radius: .5rem;
+            padding: 1.5rem;
+            box-shadow: 0 8px 22px rgba(34, 85, 62, .1);
+        }
+
+        .ayur-hero__label,
+        .ayur-section__label {
+            color: #27724f;
+            font-size: var(--smaller-font-size);
+            font-weight: var(--font-semi-bold);
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        .ayur-hero__title {
+            color: #173f2d;
+            font-size: var(--biggest-font-size);
+            line-height: 1.05;
+            margin: .5rem 0 1rem;
+        }
+
+        .ayur-hero__description {
+            color: #41564b;
+            margin-bottom: var(--mb-3);
+        }
+
+        .ayur-hero__actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .ayur-download {
+            background: #27724f;
+        }
+
+        .ayur-download:hover {
+            background: #173f2d;
+        }
+
+        .ayur-note {
+            color: #63766c;
+            font-size: var(--small-font-size);
+        }
+
+        .ayur-hero__visual {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .ayur-stat,
+        .ayur-card,
+        .ayur-flow,
+        .ayur-feature {
+            background: #ffffff;
+            border: 1px solid #dfeee5;
+            border-radius: .5rem;
+            box-shadow: 0 4px 14px rgba(34, 85, 62, .08);
+        }
+
+        .ayur-stat {
+            min-height: 8.5rem;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .ayur-stat i {
+            color: #27724f;
+            font-size: 2rem;
+        }
+
+        .ayur-stat span {
+            color: #173f2d;
+            font-size: var(--h1-font-size);
+            font-weight: var(--font-bold);
+            line-height: 1;
+        }
+
+        .ayur-stat p {
+            color: #63766c;
+            font-size: var(--small-font-size);
+        }
+
+        .ayur-section {
+            padding-top: 3rem;
+        }
+
+        .ayur-section__header {
+            max-width: 720px;
+            margin: 0 auto var(--mb-4);
+            text-align: center;
+        }
+
+        .ayur-section__title {
+            color: #173f2d;
+            font-size: var(--h1-font-size);
+            margin: .35rem 0 var(--mb-1);
+        }
+
+        .ayur-section__text {
+            color: #526a5e;
+        }
+
+        .ayur-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .ayur-card {
+            padding: 1.25rem;
+        }
+
+        .ayur-card__top {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            margin-bottom: var(--mb-2);
+        }
+
+        .ayur-card__icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 2.75rem;
+            height: 2.75rem;
+            border-radius: .5rem;
+            background: #edf8f1;
+            color: #27724f;
+            font-size: 1.55rem;
+        }
+
+        .ayur-card h3,
+        .ayur-flow h3,
+        .ayur-feature h3 {
+            color: #173f2d;
+            font-size: var(--h3-font-size);
+        }
+
+        .ayur-card ul {
+            display: grid;
+            gap: .7rem;
+            color: #526a5e;
+            list-style: none;
+        }
+
+        .ayur-card li {
+            position: relative;
+            padding-left: 1.35rem;
+        }
+
+        .ayur-card li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: .62rem;
+            width: .45rem;
+            height: .45rem;
+            border-radius: 50%;
+            background: #27724f;
+        }
+
+        .ayur-flow {
+            padding: 1.25rem;
+        }
+
+        .ayur-flow__steps {
+            display: grid;
+            gap: 1rem;
+            margin-top: var(--mb-3);
+        }
+
+        .ayur-flow__step {
+            display: flex;
+            gap: .85rem;
+            align-items: flex-start;
+        }
+
+        .ayur-flow__step span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background: #27724f;
+            color: #fff;
+            font-weight: var(--font-bold);
+            line-height: 1;
+        }
+
+        .ayur-flow__step p {
+            color: #526a5e;
+        }
+
+        .ayur-feature-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .ayur-feature {
+            padding: 1.25rem;
+        }
+
+        .ayur-feature i {
+            color: #27724f;
+            font-size: 2rem;
+            margin-bottom: var(--mb-1);
+        }
+
+        .ayur-feature p {
+            color: #526a5e;
+            margin-top: .35rem;
+        }
+
+        .ayur-closing {
+            background: #173f2d;
+            color: #f7fbf8;
+            border-radius: .5rem;
+            padding: 2rem 1.25rem;
+            text-align: center;
+        }
+
+        .ayur-closing h2 {
+            font-size: var(--h1-font-size);
+            margin-bottom: var(--mb-2);
+        }
+
+        .ayur-closing p {
+            max-width: 720px;
+            margin: 0 auto var(--mb-3);
+            color: #d9eadf;
+        }
+
+        @media screen and (min-width: 768px) {
+            .ayur-hero__panel {
+                grid-template-columns: 1.1fr .9fr;
+                padding: 2.5rem;
+            }
+
+            .ayur-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .ayur-feature-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="secret-page">
+        <section class="ayur-hero bd-container">
+            <div class="ayur-hero__panel">
+                <div>
+                    <span class="ayur-hero__label">Integrated healthcare ecosystem</span>
+                    <h1 class="ayur-hero__title">Ayurvantha</h1>
+                    <p class="ayur-hero__description">
+                        Ayurvantha is a comprehensive medical application ecosystem designed to connect patients, doctors, hospitals, pharmacies, delivery partners, and ambulance services through one coordinated digital platform.
+                    </p>
+                    <div class="ayur-hero__actions">
+                        <a download href="assets/apks/app-release.apk" class="button ayur-download">
+                            <i class='bx bx-download'></i>
+                            Download APK
+                        </a>
+                        <span class="ayur-note">Private preview build for direct access only.</span>
+                    </div>
+                </div>
+
+                <div class="ayur-hero__visual" aria-label="Ayurvantha application overview">
+                    <div class="ayur-stat">
+                        <i class='bx bx-plus-medical'></i>
+                        <span>6</span>
+                        <p>Connected applications</p>
+                    </div>
+                    <div class="ayur-stat">
+                        <i class='bx bx-id-card'></i>
+                        <span>Ayur ID</span>
+                        <p>Unified medical identity</p>
+                    </div>
+                    <div class="ayur-stat">
+                        <i class='bx bx-bot'></i>
+                        <span>AI</span>
+                        <p>Pre-consultation guidance</p>
+                    </div>
+                    <div class="ayur-stat">
+                        <i class='bx bx-current-location'></i>
+                        <span>Live</span>
+                        <p>Emergency coordination</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ayur-section bd-container">
+            <div class="ayur-section__header">
+                <span class="ayur-section__label">Applications</span>
+                <h2 class="ayur-section__title">One ecosystem for every healthcare touchpoint</h2>
+                <p class="ayur-section__text">
+                    Each app handles a specific role while sharing the information needed to reduce delays, improve coordination, and support better medical decisions.
+                </p>
+            </div>
+
+            <div class="ayur-grid bd-grid">
+                <article class="ayur-card">
+                    <div class="ayur-card__top">
+                        <span class="ayur-card__icon"><i class='bx bx-user'></i></span>
+                        <h3>Patient Application</h3>
+                    </div>
+                    <ul>
+                        <li>Multi-language support for accessible healthcare usage.</li>
+                        <li>Unique Ayur ID generated from Aadhaar details to keep medical records in one place.</li>
+                        <li>Online consultations, hospital visit booking, payments, and medical history access.</li>
+                        <li>Smart hospital recommendations using condition, ratings, and reviews.</li>
+                        <li>AI virtual doctor for temporary relief tips and diet suggestions before consultation.</li>
+                    </ul>
+                </article>
+
+                <article class="ayur-card">
+                    <div class="ayur-card__top">
+                        <span class="ayur-card__icon"><i class='bx bx-building-house'></i></span>
+                        <h3>Hospital Application</h3>
+                    </div>
+                    <ul>
+                        <li>Role-based workflow for doctors, receptionists, reportists, and admins.</li>
+                        <li>Receptionists receive patient requests and assign cases to suitable doctors.</li>
+                        <li>Doctors request tests, reportists upload reports, and prescriptions are issued digitally.</li>
+                        <li>Billing covers consultations, tests, prescriptions, and payment processing.</li>
+                        <li>Admin tools manage staff, hospital details, medicines, home tests, equipment, diet plans, and medication reminders.</li>
+                    </ul>
+                </article>
+
+                <article class="ayur-card">
+                    <div class="ayur-card__top">
+                        <span class="ayur-card__icon"><i class='bx bx-first-aid'></i></span>
+                        <h3>Doctor Application</h3>
+                    </div>
+                    <ul>
+                        <li>Independent doctors can provide appointment-based online consultations.</li>
+                        <li>Supports video calls, voice calls, and messaging for minor health issues.</li>
+                        <li>Patients can request a follow-up consultation at no additional cost when an issue remains unresolved.</li>
+                    </ul>
+                </article>
+
+                <article class="ayur-card">
+                    <div class="ayur-card__top">
+                        <span class="ayur-card__icon"><i class='bx bx-capsule'></i></span>
+                        <h3>Pharmacy Application</h3>
+                    </div>
+                    <ul>
+                        <li>Partner pharmacies can list medicines and medical equipment.</li>
+                        <li>Nearby pharmacies are notified when patients place orders.</li>
+                        <li>The pharmacy with available stock accepts the order and shares pickup details with delivery partners.</li>
+                    </ul>
+                </article>
+
+                <article class="ayur-card">
+                    <div class="ayur-card__top">
+                        <span class="ayur-card__icon"><i class='bx bx-package'></i></span>
+                        <h3>Delivery Application</h3>
+                    </div>
+                    <ul>
+                        <li>Delivery partners transport medicines and medical equipment.</li>
+                        <li>Home visits can support basic health checkups when booked by patients.</li>
+                        <li>Orders include both pharmacy pickup and patient delivery address details.</li>
+                    </ul>
+                </article>
+
+                <article class="ayur-card">
+                    <div class="ayur-card__top">
+                        <span class="ayur-card__icon"><i class='bx bx-plus-circle'></i></span>
+                        <h3>Ambulance Application</h3>
+                    </div>
+                    <ul>
+                        <li>Patient location and Ayur ID are instantly shared with ambulance drivers.</li>
+                        <li>Drivers receive direct navigation to the patient.</li>
+                        <li>Traffic police alerts help clear routes and reduce emergency response time.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="ayur-section bd-container">
+            <div class="ayur-section__header">
+                <span class="ayur-section__label">Emergency support</span>
+                <h2 class="ayur-section__title">Designed for faster critical care response</h2>
+                <p class="ayur-section__text">
+                    Ayurvantha coordinates patients, ambulances, hospitals, and traffic support so urgent treatment can begin with fewer delays.
+                </p>
+            </div>
+
+            <div class="ayur-flow">
+                <h3>Emergency workflow</h3>
+                <div class="ayur-flow__steps">
+                    <div class="ayur-flow__step">
+                        <span>1</span>
+                        <p>The patient triggers an emergency request for situations such as an accident or heart stroke.</p>
+                    </div>
+                    <div class="ayur-flow__step">
+                        <span>2</span>
+                        <p>Real-time location and Ayur ID are shared with ambulance services.</p>
+                    </div>
+                    <div class="ayur-flow__step">
+                        <span>3</span>
+                        <p>Hospital formalities can be completed digitally while the patient is in transit.</p>
+                    </div>
+                    <div class="ayur-flow__step">
+                        <span>4</span>
+                        <p>The receiving hospital prepares ICU resources and required infrastructure in advance.</p>
+                    </div>
+                    <div class="ayur-flow__step">
+                        <span>5</span>
+                        <p>Traffic police are alerted automatically to clear the route and improve arrival time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ayur-section bd-container">
+            <div class="ayur-section__header">
+                <span class="ayur-section__label">Platform intelligence</span>
+                <h2 class="ayur-section__title">Automation, AI assistance, and real-time connectivity</h2>
+            </div>
+
+            <div class="ayur-feature-grid bd-grid">
+                <article class="ayur-feature">
+                    <i class='bx bx-food-menu'></i>
+                    <h3>AI diet guidance</h3>
+                    <p>Diet suggestions can be generated from diagnosis details and prescriptions.</p>
+                </article>
+                <article class="ayur-feature">
+                    <i class='bx bx-time-five'></i>
+                    <h3>Medication reminders</h3>
+                    <p>Patients receive automated medicine reminders to support regular treatment.</p>
+                </article>
+                <article class="ayur-feature">
+                    <i class='bx bx-test-tube'></i>
+                    <h3>Home test booking</h3>
+                    <p>Basic checks such as BP and sugar tests can be booked for home service.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="ayur-section bd-container">
+            <div class="ayur-closing">
+                <h2>Healthcare coordination without the usual delays</h2>
+                <p>
+                    Ayurvantha aims to create a seamless technology-driven healthcare ecosystem that improves communication, reduces response time, and enhances patient outcomes across all major stakeholders.
+                </p>
+                <a download href="assets/apks/app-release.apk" class="button button-white">
+                    <i class='bx bx-download'></i>
+                    Download APK
+                </a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

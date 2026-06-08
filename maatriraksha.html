@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="MaatriRaksha is a smart preeclampsia detection wristband and mobile monitoring system for early pregnancy risk detection.">
+    <title>MaatriRaksha | Smart Preeclampsia Detection Wristband</title>
+
+    <link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(180deg, #e7f4fb 0%, #f8fbff 100%);
+        }
+
+        .secret-page {
+            padding-top: calc(var(--header-height) + 1.5rem);
+        }
+
+        .ayur-hero {
+            min-height: calc(100vh - var(--header-height));
+            display: grid;
+            align-content: center;
+            padding-bottom: 3rem;
+        }
+
+        .ayur-hero__panel {
+            display: grid;
+            gap: 2rem;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: .75rem;
+            padding: 1.75rem;
+            box-shadow: 0 18px 45px rgba(15, 93, 136, 0.12);
+            border: 1px solid rgba(15, 93, 136, 0.1);
+        }
+
+        .ayur-hero__label,
+        .ayur-section__label {
+            color: #0f5d88;
+            font-size: var(--smaller-font-size);
+            font-weight: var(--font-semi-bold);
+            letter-spacing: 0;
+            text-transform: uppercase;
+        }
+
+        .ayur-hero__title {
+            color: #072f4f;
+            font-size: var(--biggest-font-size);
+            line-height: 1.05;
+            margin: .5rem 0 1rem;
+        }
+
+        .ayur-hero__description {
+            color: #3f5f77;
+            margin-bottom: var(--mb-3);
+        }
+
+        .ayur-hero__actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .ayur-download {
+            background: #0f5d88;
+            color: #fff;
+            border-radius: .65rem;
+            padding: .95rem 1.4rem;
+        }
+
+        .ayur-download:hover {
+            background: #08445f;
+        }
+
+        .ayur-note {
+            color: #5f7d93;
+            font-size: var(--small-font-size);
+        }
+
+        .ayur-hero__visual {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .ayur-stat,
+        .ayur-card,
+        .ayur-flow,
+        .ayur-feature {
+            background: #ffffff;
+            border: 1px solid #cfe4ef;
+            border-radius: .75rem;
+            box-shadow: 0 10px 26px rgba(15, 93, 136, .08);
+        }
+
+        .ayur-stat {
+            min-height: 8.5rem;
+            padding: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .ayur-stat i {
+            color: #0f5d88;
+            font-size: 2rem;
+        }
+
+        .ayur-stat span {
+            color: #072f4f;
+            font-size: var(--h1-font-size);
+            font-weight: var(--font-bold);
+            line-height: 1;
+        }
+
+        .ayur-stat p {
+            color: #5f7d93;
+            font-size: var(--small-font-size);
+        }
+
+        .ayur-section {
+            padding-top: 3rem;
+        }
+
+        .ayur-section__header {
+            max-width: 720px;
+            margin: 0 auto var(--mb-4);
+            text-align: center;
+        }
+
+        .ayur-section__title {
+            color: #072f4f;
+            font-size: var(--h1-font-size);
+            margin: .35rem 0 var(--mb-1);
+        }
+
+        .ayur-section__text {
+            color: #4c6b7f;
+        }
+
+        .ayur-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .ayur-card {
+            padding: 1.25rem;
+        }
+
+        .ayur-card__top {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            margin-bottom: var(--mb-2);
+        }
+
+        .ayur-card__icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 2.75rem;
+            height: 2.75rem;
+            border-radius: .75rem;
+            background: #e4f2fb;
+            color: #0f5d88;
+            font-size: 1.55rem;
+        }
+
+        .ayur-card h3,
+        .ayur-flow h3,
+        .ayur-feature h3 {
+            color: #072f4f;
+            font-size: var(--h3-font-size);
+        }
+
+        .ayur-card ul {
+            display: grid;
+            gap: .8rem;
+            color: #4c6b7f;
+            list-style: none;
+        }
+
+        .ayur-card li {
+            position: relative;
+            padding-left: 1.35rem;
+        }
+
+        .ayur-card li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: .62rem;
+            width: .45rem;
+            height: .45rem;
+            border-radius: 50%;
+            background: #0f5d88;
+        }
+
+        .ayur-flow {
+            padding: 1.25rem;
+        }
+
+        .ayur-flow__steps {
+            display: grid;
+            gap: 1rem;
+            margin-top: var(--mb-3);
+        }
+
+        .ayur-flow__step {
+            display: flex;
+            gap: .85rem;
+            align-items: flex-start;
+        }
+
+        .ayur-flow__step span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background: #0f5d88;
+            color: #fff;
+            font-weight: var(--font-bold);
+            line-height: 1;
+        }
+
+        .ayur-flow__step p {
+            color: #4c6b7f;
+        }
+
+        .ayur-feature-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .ayur-feature {
+            padding: 1.25rem;
+        }
+
+        .ayur-feature i {
+            color: #0f5d88;
+            font-size: 2rem;
+            margin-bottom: var(--mb-1);
+        }
+
+        .ayur-feature p {
+            color: #4c6b7f;
+            margin-top: .35rem;
+        }
+
+        .ayur-closing {
+            background: #0f5d88;
+            color: #f4fbff;
+            border-radius: .75rem;
+            padding: 2rem 1.25rem;
+            text-align: center;
+        }
+
+        .ayur-closing h2 {
+            font-size: var(--h1-font-size);
+            margin-bottom: var(--mb-2);
+        }
+
+        .ayur-closing p {
+            max-width: 720px;
+            margin: 0 auto var(--mb-3);
+            color: #d7e7f1;
+        }
+
+        @media screen and (min-width: 768px) {
+            .ayur-hero__panel {
+                grid-template-columns: 1.1fr .9fr;
+                padding: 2.5rem;
+            }
+
+            .ayur-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .ayur-feature-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="secret-page">
+        <section class="ayur-hero bd-container">
+            <div class="ayur-hero__panel">
+                <div>
+                    <span class="ayur-hero__label">Preeclampsia detection system</span>
+                    <h1 class="ayur-hero__title">MaatriRaksha</h1>
+                    <p class="ayur-hero__description">
+                        MaatriRaksha is a smart wristband and mobile monitoring system that enables early preeclampsia detection, continuous vital tracking, urine protein analysis, and emergency alerts for pregnant women in low-resource areas.
+                    </p>
+                    <div class="ayur-hero__actions">
+                        <a download href="assets/apks/MaatriRaksha.apk" class="button ayur-download">
+                            <i class='bx bx-download'></i>
+                            Download APK
+                        </a>
+                        <span class="ayur-note">Private preview build for direct access only.</span>
+                    </div>
+                </div>
+
+                <div class="ayur-hero__visual" aria-label="MaatriRaksha system overview">
+                    <div class="ayur-stat">
+                        <i class='bx bx-heart-circle'></i>
+                        <span>24/7</span>
+                        <p>Continuous maternal monitoring</p>
+                    </div>
+                    <div class="ayur-stat">
+                        <i class='bx bx-brain'></i>
+                        <span>AI</span>
+                        <p>On-device risk prediction</p>
+                    </div>
+                    <div class="ayur-stat">
+                        <i class='bx bx-droplet'></i>
+                        <span>Urine</span>
+                        <p>Smart dipstick protein analysis</p>
+                    </div>
+                    <div class="ayur-stat">
+                        <i class='bx bx-bell'></i>
+                        <span>Alert</span>
+                        <p>Emergency notifications and location</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ayur-section bd-container">
+            <div class="ayur-section__header">
+                <span class="ayur-section__label">Problem & solution</span>
+                <h2 class="ayur-section__title">Early detection for safer pregnancies</h2>
+                <p class="ayur-section__text">
+                    Maternal mortality remains a major global challenge, with preeclampsia as one of the leading causes. MaatriRaksha brings continuous monitoring, offline AI, and emergency response into a single wearable-mobile solution.
+                </p>
+            </div>
+
+            <div class="ayur-grid bd-grid">
+                <article class="ayur-card">
+                    <div class="ayur-card__top">
+                        <span class="ayur-card__icon"><i class='bx bx-stethoscope'></i></span>
+                        <h3>Problem statement</h3>
+                    </div>
+                    <ul>
+                        <li>Pregnancy hypertension and proteinuria are diagnosed too late for many women.</li>
+                        <li>Periodic visits miss sudden blood pressure spikes and rising risk.</li>
+                        <li>Rural and low-resource communities lack continuous access to healthcare.</li>
+                        <li>Delayed diagnosis increases maternal and fetal risks significantly.</li>
+                    </ul>
+                </article>
+
+                <article class="ayur-card">
+                    <div class="ayur-card__top">
+                        <span class="ayur-card__icon"><i class='bx bx-chip'></i></span>
+                        <h3>Our solution</h3>
+                    </div>
+                    <ul>
+                        <li>ESP32-based wristband captures blood flow, motion, and oxygen signals every five minutes.</li>
+                        <li>Bluetooth Low Energy sends validated readings to a Flutter smartphone app.</li>
+                        <li>On-device TensorFlow Lite model estimates systolic and diastolic blood pressure offline.</li>
+                        <li>Automated alerts recommend urine testing or emergency contact notification when risk is high.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="ayur-section bd-container">
+            <div class="ayur-section__header">
+                <span class="ayur-section__label">System workflow</span>
+                <h2 class="ayur-section__title">How MaatriRaksha works</h2>
+            </div>
+
+            <div class="ayur-flow">
+                <h3>Workflow steps</h3>
+                <div class="ayur-flow__steps">
+                    <div class="ayur-flow__step">
+                        <span>1</span>
+                        <p>The wristband collects PPG, motion, and SpO₂ data every five minutes, removing artifacts using accelerometer signals.</p>
+                    </div>
+                    <div class="ayur-flow__step">
+                        <span>2</span>
+                        <p>Validated readings transmit over BLE to the phone and save locally in SQLite for offline reliability.</p>
+                    </div>
+                    <div class="ayur-flow__step">
+                        <span>3</span>
+                        <p>A TensorFlow Lite model estimates systolic and diastolic blood pressure directly on the smartphone.</p>
+                    </div>
+                    <div class="ayur-flow__step">
+                        <span>4</span>
+                        <p>Elevated BP alert triggers if readings exceed 140/90 for two consecutive measurements.</p>
+                    </div>
+                    <div class="ayur-flow__step">
+                        <span>5</span>
+                        <p>The app guides the user to capture a urine dipstick image for AI-based protein level analysis.</p>
+                    </div>
+                    <div class="ayur-flow__step">
+                        <span>6</span>
+                        <p>The computer vision model classifies protein as negative, trace, or 1+ through 4+.</p>
+                    </div>
+                    <div class="ayur-flow__step">
+                        <span>7</span>
+                        <p>MaatriRaksha combines blood pressure, trend, gestational age, and protein result into a risk prediction.</p>
+                    </div>
+                    <div class="ayur-flow__step">
+                        <span>8</span>
+                        <p>Likely preeclampsia triggers SMS and WhatsApp alerts to emergency contacts, including location and critical readings.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ayur-section bd-container">
+            <div class="ayur-section__header">
+                <span class="ayur-section__label">Key innovations</span>
+                <h2 class="ayur-section__title">Designed for rural, low-connectivity care</h2>
+            </div>
+
+            <div class="ayur-feature-grid bd-grid">
+                <article class="ayur-feature">
+                    <i class='bx bx-shield-quarter'></i>
+                    <h3>Offline intelligence</h3>
+                    <p>Blood pressure estimation and risk scoring run without internet access for remote use.</p>
+                </article>
+                <article class="ayur-feature">
+                    <i class='bx bx-wifi-off'></i>
+                    <h3>Low-connectivity support</h3>
+                    <p>Data stores locally and alerts are queued for delivery even in intermittent networks.</p>
+                </article>
+                <article class="ayur-feature">
+                    <i class='bx bx-heart'></i>
+                    <h3>Continuous maternal care</h3>
+                    <p>Replacing periodic clinic checks with ongoing monitoring reduces late-stage risk.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="ayur-section bd-container">
+            <div class="ayur-closing">
+                <h2>Accessible preeclampsia screening for every expecting mother</h2>
+                <p>
+                    MaatriRaksha empowers pregnant women and healthcare workers with continuous monitoring, AI-based risk detection, and automated emergency response to reduce maternal mortality and improve outcomes in underserved communities.
+                </p>
+                <a download href="assets/apks/MaatriRaksha.apk" class="button button-white">
+                    <i class='bx bx-download'></i>
+                    Download APK
+                </a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

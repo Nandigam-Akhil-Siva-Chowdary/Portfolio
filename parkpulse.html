@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel="stylesheet" >
+
+    <title>ParkPulse Project | Akhil Siva Chowdary</title>
+</head>
+<body>
+    <a href="#" class="scrolltop" id="scroll-top">
+        <i class='bx bx-chevron-up scrolltop__icon'></i>
+    </a>
+
+    <header class="l-header" id="header">
+        <nav class="nav bd-container">
+            <a href="index.html#home" class="nav__logo">Akhil Siva Chowdary</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="index.html#portfolio" class="nav__link active-link">Projects</a></li>
+                    <li class="nav__item"><a href="index.html#contact" class="nav__link">ContactMe</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main project-page">
+        <section class="project-detail section bd-container">
+            <span class="section-subtitle project-detail__eyebrow">IoT Project</span>
+            <h1 class="section-title project-detail__title">ParkPulse</h1>
+
+            <div class="project-detail__hero bd-grid">
+                <div class="project-detail__media">
+                    <img src="assets/images/ParkPulse.png" alt="ParkPulse smart parking and access control system">
+                </div>
+
+                <div class="project-detail__content">
+                    <span class="project-detail__tag">Raspberry Pi, SG90 Servo, HC-SR04, RADAR, HTTP/S, UART, SPI, I2C</span>
+                    <h2 class="project-detail__heading">Real-time IoT smart parking and access control system.</h2>
+                    <p class="project-detail__description">
+                        ParkPulse is an IoT-based intelligent parking and access control system developed to reduce manual parking management and traffic congestion using multi-sensor fusion with radar and ultrasonic sensing.
+                    </p>
+                    <p class="project-detail__description">
+                        The system integrates a cloud-based web dashboard for live slot occupancy visualization and an automated servo-driven barrier gate that locks out vehicles when the parking lot reaches maximum capacity.
+                    </p>
+
+                    <div class="project-detail__points">
+                        <div>
+                            <i class='bx bx-radar'></i>
+                            <span>Radar and ultrasonic based slot detection</span>
+                        </div>
+                        <div>
+                            <i class='bx bx-cloud'></i>
+                            <span>Cloud dashboard for real-time occupancy</span>
+                        </div>
+                        <div>
+                            <i class='bx bx-lock-alt'></i>
+                            <span>Servo barrier gate with capacity lockout</span>
+                        </div>
+                    </div>
+
+                    <div class="project-detail__actions">
+                        <a href="https://github.com/Nandigam-Akhil-Siva-Chowdary/ParkPulse" class="button">Source Code</a>
+                        <a href="index.html#portfolio" class="button button-link">Back to Projects</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-info section bd-container">
+            <span class="section-subtitle">System highlights</span>
+            <h2 class="section-title">Features</h2>
+
+            <div class="project-info__grid bd-grid">
+                <div class="project-info__box">
+                    <i class='bx bx-car project-info__icon'></i>
+                    <h3>Smart Slot Detection</h3>
+                    <p>Detects vehicle presence using radar and ultrasonic inputs to improve parking slot accuracy.</p>
+                </div>
+
+                <div class="project-info__box">
+                    <i class='bx bx-line-chart project-info__icon'></i>
+                    <h3>Live Dashboard</h3>
+                    <p>Shows parking slot occupancy in real time through a cloud-connected web dashboard.</p>
+                </div>
+
+                <div class="project-info__box">
+                    <i class='bx bx-door-open project-info__icon'></i>
+                    <h3>Automated Barrier</h3>
+                    <p>Controls entry with an SG90 servo gate and blocks access automatically when the lot is full.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-info section bd-container">
+            <span class="section-subtitle">Hardware and protocols</span>
+            <h2 class="section-title">Components Used</h2>
+
+            <div class="project-info__grid bd-grid">
+                <div class="project-info__box">
+                    <i class='bx bx-chip project-info__icon'></i>
+                    <h3>Controller</h3>
+                    <p>Raspberry Pi used as the main controller for sensor processing, dashboard communication, and gate logic.</p>
+                </div>
+
+                <div class="project-info__box">
+                    <i class='bx bx-broadcast project-info__icon'></i>
+                    <h3>Sensors</h3>
+                    <p>HC-SR04 ultrasonic sensor and radar module used together for multi-sensor parking detection.</p>
+                </div>
+
+                <div class="project-info__box">
+                    <i class='bx bx-transfer project-info__icon'></i>
+                    <h3>Communication</h3>
+                    <p>HTTP/S, UART, SPI, and I2C used for cloud data transfer and hardware communication.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-gallery section bd-container">
+            <span class="section-subtitle">Gallery</span>
+            <h2 class="section-title">Project Images</h2>
+
+            <div class="project-gallery__grid bd-grid">
+                <img src="assets/images/ParkPulse.png" alt="ParkPulse project image">
+                <img src="assets/images/pp1.png" alt="ParkPulse dashboard or prototype detail">
+                <img src="assets/images/pp2.png" alt="ParkPulse access control setup">
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer__container bd-container">
+                <h1 class="footer__title">Akhil Siva Chowdary</h1>
+                <p class="footer__description">I am Nandigam Akhil Siva Chowdary and this is my personal website, consult me here.</p>
+
+                <div class="footer__social">
+                    <a href="https://www.linkedin.com/in/akhil-siva-chowdary-nandigam-897a99356" class="footer__link"><i class='bx bxl-linkedin'> </i></a>
+                    <a href="https://github.com/Nandigam-Akhil-Siva-Chowdary" class="footer__link"><i class='bx bxl-github'> </i></a>
+                    <a href="https://www.instagram.com/siva_._chowdary_/" class="footer__link"><i class='bx bxl-instagram'> </i></a>
+                </div>
+                <p class="footer__copy">&#169; 2026 Nandigam Akhil Siva Chowdary. All right reserved</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
