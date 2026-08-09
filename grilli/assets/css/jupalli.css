@@ -28,7 +28,7 @@ body.nav-active { overflow: hidden; }
 .topbar-item { display: flex; align-items: center; gap: 8px; color: #cfc8c1; font-size: 1.2rem; letter-spacing: .03em; }
 .topbar-item ion-icon { color: var(--gold-crayola); font-size: 1.5rem; }
 
-.header { top: 42px; height: 88px; border-bottom: 1px solid rgba(255,255,255,.1); background: transparent; }
+.header { position: fixed; top: 0; left: 0; width: 100%; z-index: 4; height: 88px; border-bottom: 1px solid rgba(255,255,255,.1); background-color: var(--j-charcoal); background: var(--j-charcoal); }
 .header.active { top: 0; background-color: var(--j-charcoal); background: var(--j-charcoal); height: 74px; }
 .header .container { height: 100%; display: flex; align-items: center; }
 .brand { display: inline-flex; align-items: center; gap: 12px; min-width: max-content; }
